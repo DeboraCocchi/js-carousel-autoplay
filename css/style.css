@@ -1,0 +1,122 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  height:100vh;
+  width:100vw;
+}
+
+.main-container{
+  background:linear-gradient(45deg, aliceblue, steelblue);
+  height:100%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container-content{
+  width:70%;
+  height:60vh;
+  display:flex;
+  margin:100px;
+}
+
+.container-content .paintings{
+  width:80%;
+  min-width:550px;
+  height:100%;
+  background-color: aquamarine;
+}
+
+ul{
+  list-style: none;
+  height:100%;
+  width:100%;
+}
+
+li.mini-item{
+  height:20%;
+  width:100%;
+  position: relative;
+  background-color: yellow;
+}
+
+
+.container-content .paintings img, .mini-item>img{
+  object-fit: cover;
+  width:100%;
+  height:100%;
+}
+
+.miniatures{
+  width:20%;
+  min-width:60px;
+  height:100%;
+  background-color: cadetblue;
+  position: relative;
+
+}
+
+.hide{
+  display:none;
+}
+
+.item{
+  display: none;
+}
+
+.item.active{
+  display: block;
+}
+
+
+.shadow{
+  content:'';
+  background-color: rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.mini-item.active{
+  background:none;
+  border:2px solid white;
+}
+
+.mini-item.active .shadow{
+  display: none;
+}
+
+
+.arrow{
+  width:20px;
+  height:20px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  z-index: 10;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow:hover{
+  background-color: rgba(255, 255, 255, 0.884);
+}
+
+.arrow.up{
+  top:5px;
+}
+
+.arrow.down{
+  bottom:5px;
+}
