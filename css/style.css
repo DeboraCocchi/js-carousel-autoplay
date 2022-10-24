@@ -21,8 +21,8 @@ body{
 
 
 .container-content{
-  width:70%;
-  height:60vh;
+  width:60%;
+  height:70vh;
   display:flex;
   margin:100px;
 }

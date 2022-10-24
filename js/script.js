@@ -39,8 +39,6 @@ for (let i=0;i<paintingsArray.length;i++){
   miniCards.className='mini-item';
   miniCards.append(ShadowContainer);
   miniPaintingsList.append(miniCards);
-  console.log(miniCards);
-  
   miniCards.innerHTML=miniatureTag;
 };
 
@@ -80,4 +78,30 @@ up.addEventListener('click', function(){
   miniItems[counterPainting].classList.add('active');
 });
 
+let paintingAutoShow;
+paintingAutoShow = setInterval(selfShow, 2000);
 
+
+function selfShow(){
+  items[counterPainting].classList.remove('active');
+  miniItems[counterPainting].classList.remove('active');
+  if(counterPainting=== paintingsArray.length -1){
+    counterPainting=0;
+  }else{  
+  ++counterPainting;}
+  items[counterPainting].classList.add('active');
+  miniItems[counterPainting].classList.add('active');
+
+  const activeElement = document.querySelector('.item.active');
+  activeElement.addEventListener('mouseover', mouseover);
+  activeElement.addEventListener('mouseout', mouseout);
+}
+
+
+function mouseover(){
+  clearInterval(paintingAutoShow);
+}
+
+function mouseout(){
+  paintingAutoShow = setInterval(selfShow, 2000);
+}
