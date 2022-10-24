@@ -78,6 +78,8 @@ up.addEventListener('click', function(){
   miniItems[counterPainting].classList.add('active');
 });
 
+//autoplay
+
 let paintingAutoShow;
 paintingAutoShow = setInterval(selfShow, 2000);
 
